@@ -15,4 +15,9 @@ $categories = [
     ]
 ];
 
+foreach ($categories as $categorie) {
+    if (count($categorie['produits'])===0) {
+        echo "nom".$categorie['nom'];
+    }
+}
 

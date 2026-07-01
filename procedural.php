@@ -66,3 +66,41 @@ function creerCategorie(array $categories) : array {
     echo "Categorie creee !\n";
     return $categories;
 }
+$categories = creerCategorie($categories);
+
+function chercherCategorieParCode(array $categories) : int {
+    $categorieExiste = false;
+    do {
+        $codeCategorie = readline("Code de categorie : ");
+        foreach($categories as $index => $categorie){
+            if($categorie['code'] == $codeCategorie){
+                $categorieExiste = true;
+                $categorieIndex = $index;
+            }
+        }
+        if($categorieExiste == false){
+            echo "Categorie nexiste pas !\n";}
+    }while($categorieExiste == false);
+    return $categorieIndex;
+}
+
+function ajouterProduit(array $categories) : array {
+    $categorieIndex = chercherCategorieParCode($categories);
+    
+    $nomDuProduit = readline("nom produit : ");
+    $referenceDuProduit = readline("reference : ");
+    $prixDuProduit = readline("prix : ");
+    $quantiteDuProduit = readline("quantite : ");
+    $produit = [
+        'nom' => $nomDuProduit,
+        'reference' => $referenceDuProduit,
+          'prix' => $prixDuProduit,
+        'quantite' => $quantiteDuProduit
+      ];
+
+    $categories[$categorieIndex]['produits'][] = $produit;
+    echo "Produit ajouter!\n";
+    return $categories;
+}
+
+$categories = ajouterProduit($categories);

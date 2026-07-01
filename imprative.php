@@ -68,4 +68,19 @@ do {
     if($categorieExiste == false){
         echo "Categorie nesxiste pas !\n";
     }
+    
 } while($categorieExiste == false);
+    $nomDuProduit = readline("nom produit:");
+    $referenceDuProduit = readline("reference:");
+    $prixDuProduit = readline("prix: ");
+    $quantiteDuProduit = readline("quantite:");
+
+    $produit = [
+        'nom'=> $nomDuProduit,
+        'reference'=> $referenceDuProduit,
+        'prix'=> $prixDuProduit,
+        'quantite'=> $quantiteDuProduit
+    ];
+
+$categories[$categorieIndex]['produits'][] = $produit;
+echo "Produit ajoutee \n";

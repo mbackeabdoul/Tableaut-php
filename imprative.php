@@ -21,14 +21,14 @@ $categories = [
 //     }
 // }
 for ($i =0; $i<count($categories); $i++){
-    if($categories[$i]['produits']===0){
+    if(count($categories[$i]['produits'])===0){
         echo "nom".$categories[$i]['nom'];
     }
 }
 
 $codeValide = false;
-do {
-    $code = readline("Code : ");
+do{
+    $code = readline("Code:");
     $codeValide = true;
     for($i = 0; $i < count($categories); $i++){
         if($categories[$i]['code'] == $code){
@@ -36,5 +36,22 @@ do {
             $codeValide = false;
         }
     }
-} while($codeValide == false);
+}while($codeValide == false);
 
+$nomValide = false;
+do{
+    $nom = readline("Nom:");
+    $nomValide = true;
+    for($i = 0; $i < count($categories); $i++){
+        if($categories[$i]['nom'] == $nom){
+            echo "Nom deja exsite";
+            $nomValide = false;
+        }
+    }
+}while($nomValide == false);
+
+ $categories[]=[
+    'nom' => $nom,
+     'code' => $code,
+    'produits'=>[]
+    ];

@@ -47,7 +47,7 @@ function saisirNomCategories(array $categories) : string {
         $nomValide = true;
         foreach($categories as $categorie){
             if($categorie['nom'] == $nom){
-                echo "Nom deja existant !\n";
+                echo "Nom deja existe !\n";
                 $nomValide = false;
             }
         }

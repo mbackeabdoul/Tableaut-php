@@ -81,6 +81,5 @@ do {
         'prix'=> $prixDuProduit,
         'quantite'=> $quantiteDuProduit
     ];
-
-$categories[$categorieIndex]['produits'][] = $produit;
-echo "Produit ajoutee \n";
+    $categories[$categorieIndex]['produits'][] = $produit;
+    echo "Produit ajoutee \n";

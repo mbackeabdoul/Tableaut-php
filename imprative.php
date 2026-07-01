@@ -55,3 +55,17 @@ do{
      'code' => $code,
     'produits'=>[]
     ];
+
+    $categorieExiste = false;
+do {
+    $codeCategorie = readline("Code de categorie:");
+    for($i = 0; $i < count($categories); $i++){
+        if($categories[$i]['code'] == $codeCategorie){
+          $categorieExiste = true;
+          $categorieIndex = $i;
+        }
+    }
+    if($categorieExiste == false){
+        echo "Categorie nesxiste pas !\n";
+    }
+} while($categorieExiste == false);
